@@ -10,16 +10,16 @@ global:
     plugins:
       - disabled: false
         integrity: >-
-          sha512-hxB0hyPelyzWkNEUWFNslNbXH1seQ+5mddSyqp+lILFNmTgOZfn+JqDk6mxHGPDqBYOiNuM67P1+FKVjvr5DHw==
-        package: '@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.4.11'
+          sha512-HvWEWPtgyPn2ZB+E8bZClO8Pleg0kAmHrs/2DM7p++YKlE9lVPKxhAl1aZ9XDkKP0oiBdtmX0OGDKLqKBL3OBw==
+        package: '@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.4.12'
         pluginConfig:
           orchestrator:
             dataIndexService:
               url: '${WORKFLOWS_ROUTE}'
       - disabled: false
         integrity: >-
-          sha512-Fr1YsANW2zGIqt/s2QKUHJaC+gqZOVoIF2TLAKNgVojdJg34C24jsl9RaoTtQHA56b5gxkF9xcYGP1zGb1iQqw==
-        package: '@janus-idp/backstage-plugin-orchestrator@1.7.1'
+          sha512-uJaz0iZa3nNTnfyJEInbRMJWdoU5qTxeGNFdLym0j4J+SZOnzzQaHl5zU6CMZqEN4uM/fhaeE4raDa/3sEai3Q==
+        package: '@janus-idp/backstage-plugin-orchestrator@1.7.2'
         pluginConfig:
           dynamicPlugins:
             frontend:
