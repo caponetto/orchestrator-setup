@@ -10,16 +10,16 @@ global:
     plugins:
       - disabled: false
         integrity: >-
-          sha512-HvWEWPtgyPn2ZB+E8bZClO8Pleg0kAmHrs/2DM7p++YKlE9lVPKxhAl1aZ9XDkKP0oiBdtmX0OGDKLqKBL3OBw==
-        package: '@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.4.12'
+          sha512-mrRbeNtmaztyDWV3wRiYTykIBwRyF7+RuXN5YbOXLgZ6GoUsfWMu4PHu6Fl4+/CLm2aGyOrGO32RNWU/txY3Wg==
+        package: '@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.6.0'
         pluginConfig:
           orchestrator:
             dataIndexService:
               url: '${WORKFLOWS_ROUTE}'
       - disabled: false
         integrity: >-
-          sha512-uJaz0iZa3nNTnfyJEInbRMJWdoU5qTxeGNFdLym0j4J+SZOnzzQaHl5zU6CMZqEN4uM/fhaeE4raDa/3sEai3Q==
-        package: '@janus-idp/backstage-plugin-orchestrator@1.7.2'
+          sha512-KmpDjaOJUrfvulC2MYkvLze8tojE4wpROUK0Bb+ICdj43ZbJtrrnFMl0YrM2zr3Lha2fTfUiHRSslpBrtS3QWA==
+        package: '@janus-idp/backstage-plugin-orchestrator@1.8.2'
         pluginConfig:
           dynamicPlugins:
             frontend:
@@ -76,6 +76,8 @@ upstream:
         locations:
           - type: url
             target: https://github.com/redhat-developer/red-hat-developer-hub-software-templates/blob/main/templates.yaml
+          - type: url
+            target: https://github.com/janus-idp/backstage-plugins/blob/%40janus-idp/plugin-notifications-backend%401.3.5/plugins/notifications-backend/users.yaml
       backend:
         auth:
           keys:
