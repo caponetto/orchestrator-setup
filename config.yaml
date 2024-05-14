@@ -10,16 +10,16 @@ global:
     plugins:
       - disabled: false
         integrity: >-
-          sha512-mrRbeNtmaztyDWV3wRiYTykIBwRyF7+RuXN5YbOXLgZ6GoUsfWMu4PHu6Fl4+/CLm2aGyOrGO32RNWU/txY3Wg==
-        package: '@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.6.0'
+          sha512-G9SHCsXN3eLgRRaP3v8eNXnfmnqStQaZrLUiTRgCH9W/WGHk3Q//V7I8HjDzpPchA7g5yrR5Qhh50MCd7oiFKw==
+        package: '@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.8.2'
         pluginConfig:
           orchestrator:
             dataIndexService:
               url: '${WORKFLOWS_ROUTE}'
       - disabled: false
         integrity: >-
-          sha512-KmpDjaOJUrfvulC2MYkvLze8tojE4wpROUK0Bb+ICdj43ZbJtrrnFMl0YrM2zr3Lha2fTfUiHRSslpBrtS3QWA==
-        package: '@janus-idp/backstage-plugin-orchestrator@1.8.2'
+          sha512-yYKLVfEqYWbQAcaB3LzNiro6Hs2f5lfofOoqZwKCkSXZJBu7VuywS5seruR6VdUyWLrMMR9TfJWgLIcPScpOfA==
+        package: '@janus-idp/backstage-plugin-orchestrator@1.11.2'
         pluginConfig:
           dynamicPlugins:
             frontend:
@@ -75,11 +75,17 @@ upstream:
               ]
         locations:
           - type: url
+            target: https://github.com/janus-idp/backstage-showcase/blob/main/catalog-entities/all.yaml
+          - type: url
             target: https://github.com/redhat-developer/red-hat-developer-hub-software-templates/blob/main/templates.yaml
           - type: url
-            target: https://github.com/janus-idp/backstage-plugins/blob/%40janus-idp/plugin-notifications-backend%401.3.5/plugins/notifications-backend/users.yaml
+            target: https://github.com/janus-idp/backstage-plugins/blob/%40janus-idp/shared-react%402.6.1/plugins/notifications-backend/users.yaml
+      auth:
+        providers:
+          guest: {}
       backend:
         auth:
+          dangerouslyDisableDefaultAuthPolicy: true
           keys:
             - secret: '${BACKEND_SECRET}'
         baseUrl: 'https://{{- include "janus-idp.hostname" . }}'
@@ -88,15 +94,22 @@ upstream:
         csp:
           connect-src:
             - '''self'''
+            - 'blob:'
+            - 'http:'
+            - 'https:'
+            - 'data:'
             - 'https://cdn.jsdelivr.net'
-          frame-src:
-            - "https://sandbox.kie.org"
+          frame-ancestors:
+            - '{{ .Values.global.host }}'
           script-src:
             - '''self'''
             - '''unsafe-eval'''
+            - '''unsafe-inline'''
             - 'https://cdn.jsdelivr.net'
           script-src-elem:
             - '''self'''
+            - '''unsafe-eval'''
+            - '''unsafe-inline'''
             - 'https://cdn.jsdelivr.net'
           worker-src:
             - '''self'''
