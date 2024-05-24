@@ -6,7 +6,7 @@ DEFAULT_GITHUB_TOKEN="notoken"
 DEFAULT_WORKFLOWS_RESOURCE_NAME="workflows"
 DEFAULT_BACKSTAGE_RESOURCE_NAME="backstage"
 DEFAULT_HELM_CHART_CONFIG_YAML="config.yaml"
-DEFAULT_JANUS_HELM_CHART_VERSION="2.14.0"
+DEFAULT_JANUS_HELM_CHART_VERSION="2.15.2"
 
 # Required environment variables
 if [ -z "$OPENSHIFT_TOKEN" ]; then echo "OPENSHIFT_TOKEN environment variable is not set"; exit 1; fi

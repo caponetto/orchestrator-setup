@@ -26,7 +26,7 @@ Name | Description | Default value
 `WORKFLOWS_RESOURCE_NAME` | Name of the resources associated with the workflows deployment. | `workflows`
 `BACKSTAGE_RESOURCE_NAME` | Name of the resources associated with the Backstage deployment. | `backstage`
 `HELM_CHART_CONFIG_YAML` | Configuration of the helm release (either local file or url). | `config.yaml`
-`JANUS_HELM_CHART_VERSION` | Version of the Helm chart being used. The configuration might change in case other version is used ([chart source](https://github.com/redhat-developer/rhdh-chart)). | `2.14.0`
+`JANUS_HELM_CHART_VERSION` | Version of the Helm chart being used. The configuration might change in case other version is used ([chart source](https://github.com/redhat-developer/rhdh-chart)). | `2.15.2`
 
 > **Note**: Edit the [config.yaml](config.yaml) file if you need to customize Backstage even further.
 
